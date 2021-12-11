@@ -1,29 +1,13 @@
 ## Introduction
 
-We follow **Supar** ([Zhang et al.](https://github.com/yzhangcs/parser)), a Python package that contains many state-of-the-art syntactic/semantic parsers (with many well-known pretrained models), as well as highly parallel implementations of several effective structured prediction algorithms. We add support for multilingual universal syntactic dependency pretrained model (UDPrLM) including UD-BERT, $UD-XLM-R_{base}$ and $UD-XLM-R_{large}$.
+We follow **Supar** ([Zhang et al.](https://github.com/yzhangcs/parser)), a Python package that contains many state-of-the-art syntactic/semantic parsers, as well as highly parallel implementations of several effective structured prediction algorithms. We add support for multilingual universal syntactic dependency pretrained model (UDPrLM) including UD-BERT, UD-XLM-R<sub>base</sub> and UD-XLM-R<sub>large</sub>.
 
 ## Installation
 
-`SuPar` can be installed via pip:
 ```sh
-$ pip install -U supar
-```
-Or installing from source is also permitted:
-```sh
-$ git clone https://github.com/yzhangcs/parser && cd parser
+$ git clone https://github.com/KAI-SHU/UDPrLM && cd UDPrLM/parser
 $ python setup.py install
 ```
-
-As a prerequisite, the following requirements should be satisfied:
-* `python`: >= 3.7
-* [`pytorch`](https://github.com/pytorch/pytorch): >= 1.7
-* [`transformers`](https://github.com/huggingface/transformers): >= 4.0
-
-## Performance
-
-`SuPar` provides pretrained models for English, Chinese and 17 other languages.
-The tables below list the performance and parsing speed of pretrained models for different tasks.
-All results are tested on the machine with Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz and Nvidia GeForce GTX 1080 Ti GPU.
 
 ### Dependency Parsing
 
