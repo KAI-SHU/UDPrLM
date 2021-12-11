@@ -1,16 +1,6 @@
 ## Introduction
 
-We follow **Supar** (https://github.com/yzhangcs/parser), a Python package that contains many state-of-the-art syntactic/semantic parsers (with many well-known pretrained models), as well as highly parallel implementations of several effective structured prediction algorithms. We add support for multilingual universal dependency pretrained model (UDPrLM) including .
-
-* Dependency Parser
-  * Biaffine ([Dozat and Manning, 2017](https://parser.readthedocs.io/en/latest/refs.html#dozat-2017-biaffine))
-  * CRF/MatrixTree ([Koo et al., 2007](https://parser.readthedocs.io/en/latest/refs.html#koo-2007-structured); [Ma and Hovy, 2017](https://parser.readthedocs.io/en/latest/refs.html#ma-2017-neural))
-  * CRF2o ([Zhang et al., 2020a](https://parser.readthedocs.io/en/latest/refs.html#zhang-2020-efficient))
-* Constituency Parser
-  * CRF ([Zhang et al., 2020b](https://parser.readthedocs.io/en/latest/refs.html#zhang-2020-fast))
-* Semantic Dependency Parser
-  * Biaffine ([Dozat and Manning, 2018](https://parser.readthedocs.io/en/latest/refs.html#wang-2019-second))
-  * MFVI/LBP ([Wang et al, 2019](https://parser.readthedocs.io/en/latest/refs.html#wang-2019-second))
+We follow **Supar** ([Zhang et al.](https://github.com/yzhangcs/parser)), a Python package that contains many state-of-the-art syntactic/semantic parsers (with many well-known pretrained models), as well as highly parallel implementations of several effective structured prediction algorithms. We add support for multilingual universal syntactic dependency pretrained model (UDPrLM) including UD-BERT, UD-XLM-R_{base} and UD-XLM-R_{large}.
 
 ## Installation
 
