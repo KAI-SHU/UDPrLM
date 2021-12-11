@@ -11,39 +11,34 @@ $ python setup.py install
 
 ### Dependency Parsing
 
-English and Chinese dependency parsing models are trained on PTB and CTB7 respectively.
-For each parser, we provide pretrained models that take BiLSTM as encoder.
-We also provide models trained by finetuning pretrained language models from [Huggingface Transformers](https://github.com/huggingface/transformers).
-We use [`robert-large`](https://huggingface.co/roberta-large) for English and [`hfl/chinese-electra-180g-large-discriminator`](https://huggingface.co/hfl/chinese-electra-180g-large-discriminator) for Chinese.
-During evaluation, punctuation is ignored in all metrics for PTB.
-
-| Name                      |  UAS  |   LAS | Sents/s |
-| ------------------------- | :---: | ----: | :-----: |
-| `biaffine-dep-en`         | 96.01 | 94.41 | 1831.91 |
-| `crf2o-dep-en`            | 96.07 | 94.51 | 531.59  |
-| `biaffine-dep-roberta-en` | 97.33 | 95.86 | 271.80  |
-| `biaffine-dep-zh`         | 88.64 | 85.47 | 1180.57 |
-| `crf2o-dep-zh`            | 89.22 | 86.15 | 237.40  |
-| `biaffine-dep-electra-zh` | 92.45 | 89.55 | 160.56  |
-
-The multilingual dependency parsing model, named `biaffine-dep-xlmr`, is trained on merged 12 selected treebanks from Universal Dependencies (UD) v2.3 dataset by finetuning [`xlm-roberta-large`](https://huggingface.co/xlm-roberta-large).
-The following table lists results of each treebank.
-Languages are represented by [ISO 639-1 Language Codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
-
-| Language |  UAS  |  LAS  | Sents/s |
-| -------- | :---: | :---: | ------: |
-| `bg`     | 96.95 | 94.24 |  343.96 |
-| `ca`     | 95.57 | 94.20 |  184.88 |
-| `cs`     | 95.79 | 93.83 |  245.68 |
-| `de`     | 89.74 | 85.59 |  283.53 |
-| `en`     | 93.37 | 91.27 |  269.16 |
-| `es`     | 94.78 | 93.29 |  192.00 |
-| `fr`     | 94.56 | 91.90 |  219.35 |
-| `it`     | 96.29 | 94.47 |  254.82 |
-| `nl`     | 96.04 | 93.76 |  268.57 |
-| `no`     | 95.64 | 94.45 |  318.00 |
-| `ro`     | 94.59 | 89.79 |  216.45 |
-| `ru`     | 96.37 | 95.24 |  243.56 |
+Below are examples of training `biaffine` dependency parsers
+```sh
+# m-BERT (baseline)
+$ python -u -m supar.cmds.biaffine_dep train -b -d 0 -c biaffine-dep-lang -p model  \
+    -f tag char bert  \
+    --train data/lang-train.conllx  \
+    --dev data/lang-dev.conllx  \
+    --test data/lang-test.conllx  \
+    --n-embed 100  \
+    --n_bert_layers 4 \
+    --bert_type bert \
+    --bert bert-base-multilingual-case  \
+    --tree --punct --freeze
+# UD-BERT
+$ python -u -m supar.cmds.biaffine_dep train -b -d 0 -c biaffine-dep-lang -p model  \
+    -f tag char bert  \
+    --train data/lang-train.conllx  \
+    --dev data/lang-dev.conllx  \
+    --test data/lang-test.conllx  \
+    --n-embed 100  \
+    --n_bert_layers 5 \
+    --bert_type udbert \
+    --bert the-path-of-udbert/  \
+    --tree --punct --freeze  \
+    --fusion_ud
+```
+When using XLM-R<sub>base</sub> or XLM-R<sub>large</sub> as the pre-training language model for baseline, you need to set --bert_type to `xlm-roberta` and --bert to `xlm-roberta-base` or `xlm-roberta-large`. When using UD-XLM-R<sub>base</sub> or UD-XLM-R<sub>large</sub> as the pre-training language model, you need to set --bert_type to `udxlmr` and --bert to the path of corresponding UDPrLM.
+For `crf2o` dependency parsers, you need to specify --proj to remove non-projective trees.
 
 ### Constituency Parsing
 
