@@ -1,12 +1,6 @@
-# SuPar
+## Introduction
 
-[![build](https://github.com/yzhangcs/parser/workflows/build/badge.svg)](https://github.com/yzhangcs/parser/actions)
-[![docs](https://readthedocs.org/projects/parser/badge/?version=latest)](https://parser.readthedocs.io/en/latest)
-[![release](https://img.shields.io/github/v/release/yzhangcs/parser)](https://github.com/yzhangcs/parser/releases)
-[![downloads](https://img.shields.io/github/downloads/yzhangcs/parser/total)](https://pypistats.org/packages/supar)
-[![LICENSE](https://img.shields.io/github/license/yzhangcs/parser)](https://github.com/yzhangcs/parser/blob/master/LICENSE)
-
-A Python package that includes many state-of-the-art syntactic/semantic parsers (with pretrained models for more than 19 languages), as well as highly-parallelized implementations of several well-known and effective structured prediction algorithms.
+We follow **Supar** (https://github.com/yzhangcs/parser), a Python package that contains many state-of-the-art syntactic/semantic parsers (with many well-known pretrained models), as well as highly parallel implementations of several effective structured prediction algorithms. We add support for multilingual universal dependency pretrained model (UDPrLM) including .
 
 * Dependency Parser
   * Biaffine ([Dozat and Manning, 2017](https://parser.readthedocs.io/en/latest/refs.html#dozat-2017-biaffine))
