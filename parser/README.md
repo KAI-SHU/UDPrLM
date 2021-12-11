@@ -1,6 +1,6 @@
 ## Introduction
 
-We follow **Supar** ([Zhang et al.](https://github.com/yzhangcs/parser)), a Python package that contains many state-of-the-art syntactic/semantic parsers (with many well-known pretrained models), as well as highly parallel implementations of several effective structured prediction algorithms. We add support for multilingual universal syntactic dependency pretrained model (UDPrLM) including UD-BERT, UD-XLM-R_{base} and UD-XLM-R_{large}.
+We follow **Supar** ([Zhang et al.](https://github.com/yzhangcs/parser)), a Python package that contains many state-of-the-art syntactic/semantic parsers (with many well-known pretrained models), as well as highly parallel implementations of several effective structured prediction algorithms. We add support for multilingual universal syntactic dependency pretrained model (UDPrLM) including UD-BERT, $UD-XLM-R_{base}$ and $UD-XLM-R_{large}$.
 
 ## Installation
 
