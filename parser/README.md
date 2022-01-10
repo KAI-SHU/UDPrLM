@@ -27,7 +27,8 @@ $ python transformers/examples/lm-parsing/preprocess_training_data/join_mlm.py
 ### Training
 ```sh
 $ cd transformers
-$ #for UD-BERT
+
+# for UD-BERT
 $ python -u examples/lm-parsing/run_dependency_parsing.py \
     --output_dir UDBERT_SAVE_PATH \
     --dataset_cache_dir CACHE_PATH \
@@ -66,7 +67,7 @@ $ python -u examples/lm-parsing/run_dependency_parsing.py \
     --parsing_training_prob 0.8 \
     --use_ud_repr 
 
-$ #for UD-XLM-R
+# for UD-XLM-R
 $ python -u examples/lm-parsing/run_dependency_parsing.py \
     --output_dir UDXLMR_SAVE_PATH \
     --dataset_cache_dir CACHE_PATH \
@@ -105,6 +106,25 @@ $ python -u examples/lm-parsing/run_dependency_parsing.py \
     --parsing_training_prob 0.8 \
     --use_ud_repr \
     --fp16
+```
+
+### Evaluate Syntactic Parsing Ability 
+Take UD-BERT as an example:
+```sh
+$ python -u examples/lm-parsing/run_dependency_parsing.py \
+    --model_name_or_path UDBERT_SAVE_PATH \
+    --data_dir UD_TREEBANKS_PATH/UD_Bulgarian-BTB \
+    --eval_file bg_btb-ud-test.conllu \
+    --do_eval \
+    --parsing_only \
+    --model_type bert \
+    --special_label APP \
+    --labels UD_JOIN_PATH/labels.txt \
+    --convert_strategy 2 \
+    --output_dir EVAL_RESULT_PATH \
+    --parsing_max_seq_length 100 \
+    --per_device_eval_batch_size 4 \
+    --per_device_parsing_eval_batch_size 4
 ```
 ## Introduction
 
