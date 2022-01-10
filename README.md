@@ -3,7 +3,7 @@
 ## Introduction
 
 The pre-trained language model (PrLM) demonstrates domination in downstream natural language processing tasks, in which multilingual PrLM takes advantage of language universality to alleviate the issue of limited resources for low-resource languages. Despite its successes, the performance of multilingual PrLM is still unsatisfactory, when multilingual PrLMs only focus on plain text and ignore obvious universal linguistic structure clues. Existing PrLMs have shown that monolingual linguistic structure knowledge may bring about better performance. Thus we propose a novel multilingual PrLM that supports both explicit universal dependency parsing and implicit language modeling. Syntax in terms of universal dependency parse serves as not only pre-training objective but also learned representation in our model, which brings unprecedented PrLM interpretability and convenience in downstream task use. Our model outperforms two popular multilingual PrLM, multilingual-BERT and XLM-R, on cross-lingual natural language understanding (NLU) benchmarks and linguistic structure parsing datasets, demonstrating the effectiveness and stronger cross-lingual modeling capabilities of our approach.
-![The model architecture of UD-PrLM](https://github.com/KAI-SHU/UDPrLM/blob/main/parser/figure/qqq.PNG)
+![The model architecture of UD-PrLM](https://github.com/KAI-SHU/UDPrLM/blob/main/figure/qqq.PNG)
 
 ## Pre-training UD-PrLM
 
@@ -233,15 +233,4 @@ Specifying --mbr to perform MBR decoding often leads to consistent improvement.
 ## Citation
 
 ```sh
-@inproceedings{NIPS2017_3f5ee243,
- author = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, \L ukasz and Polosukhin, Illia},
- booktitle = {Advances in Neural Information Processing Systems},
- editor = {I. Guyon and U. V. Luxburg and S. Bengio and H. Wallach and R. Fergus and S. Vishwanathan and R. Garnett},
- pages = {},
- publisher = {Curran Associates, Inc.},
- title = {Attention is All you Need},
- url = {https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf},
- volume = {30},
- year = {2017}
-}
 ```
