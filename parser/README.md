@@ -1,4 +1,4 @@
-### Multilingual Pre-training with Universal Dependency Learning
+# Multilingual Pre-training with Universal Dependency Learning
 
 ## Introduction
 
@@ -11,16 +11,16 @@ We follow **Supar** ([Zhang et al.](https://github.com/yzhangcs/parser)), a Pyth
 
 ## pre-training UD-PrLM
 
-# pre-process data
+### pre-process data
 
-You need to download the corpus for training Mask Language Modeling (MLM) corresponding to each baseline model, such as Wikipedias for mBERT and CommonCrawl for XLM-R<sub>base</sub> and XLM-R<sub>large</sub>, and you need to download Universal Dependencies Treebanks. Run the following code to generate UD training data from the original Universal Dependencies Treebanks (already downloaded to path 'UD_TREEBANKS_PATH') and save it to 'UD_TREEBANKS_PATH'.
+You need to download the corpus for training Mask Language Modeling (MLM) corresponding to each baseline model, such as Wikipedias for mBERT and CommonCrawl for XLM-R<sub>base</sub> and XLM-R<sub>large</sub>, and you need to download Universal Dependencies Treebanks. Run the following code to generate UD training data from the original Universal Dependencies Treebanks (already downloaded to path `UD_TREEBANKS_PATH`) and save it to `UD_TREEBANKS_PATH`.
 ```sh
 $ git clone https://github.com/KAI-SHU/UDPrLM && cd UDPrLM/parser
 $ python transformers/examples/lm-parsing/preprocess_training_data/join_ud_conllu.py
     --input_dir UD_TREEBANKS_PATH \
     --output_dir UD_JOIN_PATH
 ```
-Taking UDBERT as an example, run the following code to generate MLM training data from the original corpus (already downloaded to path 'MULTILINGUAL_WIKIPEDIAS_DATA_PATH') and save it to 'UDBERT_MLM_JOIN_PATH'.
+Taking UDBERT as an example, run the following code to generate MLM training data from the original corpus (already downloaded to path `MULTILINGUAL_WIKIPEDIAS_DATA_PATH`) and save it to `UDBERT_MLM_JOIN_PATH`.
 ```sh
 $ python transformers/examples/lm-parsing/preprocess_training_data/join_mlm.py
     --input_dir MULTILINGUAL_WIKIPEDIAS_DATA_PATH \
