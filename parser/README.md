@@ -2,8 +2,7 @@
 ## Introduction
 
 The pre-trained language model (PrLM) demonstrates domination in downstream natural language processing tasks, in which multilingual PrLM takes advantage of language universality to alleviate the issue of limited resources for low-resource languages. Despite its successes, the performance of multilingual PrLM is still unsatisfactory, when multilingual PrLMs only focus on plain text and ignore obvious universal linguistic structure clues. Existing PrLMs have shown that monolingual linguistic structure knowledge may bring about better performance. Thus we propose a novel multilingual PrLM that supports both explicit universal dependency parsing and implicit language modeling. Syntax in terms of universal dependency parse serves as not only pre-training objective but also learned representation in our model, which brings unprecedented PrLM interpretability and convenience in downstream task use. Our model outperforms two popular multilingual PrLM, multilingual-BERT and XLM-R, on cross-lingual natural language understanding (NLU) benchmarks and linguistic structure parsing datasets, demonstrating the effectiveness and stronger cross-lingual modeling capabilities of our approach.
-<img src="https://github.com/KAI-SHU/UDPrLM/blob/main/parser/figure/qqq.PNG" width="300" height="200" alt="The model architecture of UD-PrLM"/><br/>
-
+![The model architecture of UD-PrLM](https://github.com/KAI-SHU/UDPrLM/blob/main/parser/figure/qqq.PNG)
 ## Introduction
 
 We follow **Supar** ([Zhang et al.](https://github.com/yzhangcs/parser)), a Python package that contains many state-of-the-art syntactic/semantic parsers, as well as highly parallel implementations of several effective structured prediction algorithms. We add support for multilingual universal syntactic dependency pretrained model (UDPrLM) including UD-BERT, UD-XLM-R<sub>base</sub> and UD-XLM-R<sub>large</sub>.
