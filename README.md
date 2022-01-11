@@ -33,7 +33,7 @@ $ python transformers/examples/lm-parsing/preprocess_training_data/join_mlm.py
 $ cd transformers
 
 # for UD-BERT
-$ python -u examples/lm-parsing/run_dependency_parsing.py \
+$ python -u examples/lm-parsing/run_ud_lm.py \
     --output_dir UDBERT_SAVE_PATH \
     --dataset_cache_dir CACHE_PATH \
     --config_name BertConfig \
@@ -45,7 +45,7 @@ $ python -u examples/lm-parsing/run_dependency_parsing.py \
     --special_label APP \
     --mlm_train_file UDBERT_MLM_JOIN_PATH/mlm_train.txt \
     --mlm_validation_file UDBERT_MLM_JOIN_PATH/mlm_dev.txt \
-    --max_seq_length 384 \
+    --max_seq_length 512 \
     --parsing_max_seq_length 256 \
     --warmup_ratio 0.1 \
     --learning_rate 0.00003 \
@@ -72,7 +72,7 @@ $ python -u examples/lm-parsing/run_dependency_parsing.py \
     --use_ud_repr 
 
 # for UD-XLM-R
-$ python -u examples/lm-parsing/run_dependency_parsing.py \
+$ python -u examples/lm-parsing/run_ud_lm.py \
     --output_dir UDXLMR_SAVE_PATH \
     --dataset_cache_dir CACHE_PATH \
     --config_name XLMRobertaConfig \
@@ -84,7 +84,7 @@ $ python -u examples/lm-parsing/run_dependency_parsing.py \
     --special_label APP \
     --mlm_train_file UDXLMR_MLM_JOIN_PATH/mlm_train.txt \
     --mlm_validation_file UDXLMR_MLM_JOIN_PATH/mlm_dev.txt \
-    --max_seq_length 384 \
+    --max_seq_length 512 \
     --parsing_max_seq_length 256 \
     --warmup_ratio 0.1 \
     --learning_rate 0.00003 \
@@ -117,7 +117,7 @@ $ python -u examples/lm-parsing/run_dependency_parsing.py \
 Take UD-BERT as an example:
 
 ```sh
-$ python -u examples/lm-parsing/run_dependency_parsing.py \
+$ python -u examples/lm-parsing/run_ud_lm.py \
     --model_name_or_path UDBERT_SAVE_PATH \
     --data_dir UD_TREEBANKS_PATH/UD_Bulgarian-BTB \
     --eval_file bg_btb-ud-test.conllu \
@@ -151,7 +151,7 @@ $ udxlmr = UDXLMRobertaModel.from_pretrained('UDXLMR_SAVE_PATH', \
 	config=UDXLMRobertaConfig.from_pretrained('UDXLMR_SAVE_PATH', output_hidden_states=True))
 ```
 
-## Use `udlm` for Parsing
+## Example: use `udlm` for parsing
 
 ### Introduce Supar
 
