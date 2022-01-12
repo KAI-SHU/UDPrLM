@@ -13,7 +13,7 @@ You need to download the corpus for training Mask Language Modeling (MLM) corres
 
 ```sh
 $ git clone https://github.com/KAI-SHU/UDPrLM && cd UDPrLM
-$ python transformers/examples/lm-parsing/preprocess_training_data/join_ud_conllu.py
+$ python transformers/examples/udlm/preprocess_training_data/join_ud_conllu.py
     --input_dir UD_TREEBANKS_PATH \
     --output_dir UD_JOIN_PATH
 ```
@@ -21,7 +21,7 @@ $ python transformers/examples/lm-parsing/preprocess_training_data/join_ud_conll
 Taking UD-BERT as an example, run the following code to generate MLM training data from the original corpus (already downloaded to path `MULTILINGUAL_WIKIPEDIAS_DATA_PATH`) and save it to `UDBERT_MLM_JOIN_PATH`.
 
 ```sh
-$ python transformers/examples/lm-parsing/preprocess_training_data/join_mlm.py
+$ python transformers/examples/udlm/preprocess_training_data/join_mlm.py
     --input_dir MULTILINGUAL_WIKIPEDIAS_DATA_PATH \
     --output_dir UDBERT_MLM_JOIN_PATH \
     --suffix .text
@@ -31,9 +31,10 @@ $ python transformers/examples/lm-parsing/preprocess_training_data/join_mlm.py
 
 ```sh
 $ cd transformers
+$ pip install --editable .
 
 # for UD-BERT
-$ python -u examples/lm-parsing/run_ud_lm.py \
+$ python -u examples/udlm/run_ud_lm.py \
     --output_dir UDBERT_SAVE_PATH \
     --dataset_cache_dir CACHE_PATH \
     --config_name BertConfig \
@@ -72,7 +73,7 @@ $ python -u examples/lm-parsing/run_ud_lm.py \
     --use_ud_repr 
 
 # for UD-XLM-R
-$ python -u examples/lm-parsing/run_ud_lm.py \
+$ python -u examples/udlm/run_ud_lm.py \
     --output_dir UDXLMR_SAVE_PATH \
     --dataset_cache_dir CACHE_PATH \
     --config_name XLMRobertaConfig \
@@ -117,7 +118,7 @@ $ python -u examples/lm-parsing/run_ud_lm.py \
 Take UD-BERT as an example:
 
 ```sh
-$ python -u examples/lm-parsing/run_ud_lm.py \
+$ python -u examples/udlm/run_ud_lm.py \
     --model_name_or_path UDBERT_SAVE_PATH \
     --data_dir UD_TREEBANKS_PATH/UD_Bulgarian-BTB \
     --eval_file bg_btb-ud-test.conllu \
