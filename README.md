@@ -138,7 +138,7 @@ $ python -u examples/udlm/run_ud_lm.py \
 
 At the end of the pre-training process, the UD-PrLM is saved in the output directory you specified, and an UD-PrLM can be loaded and used by calling the `udlm` library.
 
-```sh
+```python
 $ from transformers import AutoTokenizer
 $ from udlm import UDBertConfig, UDBertModel
 
@@ -233,7 +233,7 @@ Specifying --mbr to perform MBR decoding often leads to consistent improvement.
 
 ## Citation
 
-```sh
+```bibtex
 @inproceedings{
 sun2021multilingual,
 title={Multilingual Pre-training with Universal Dependency Learning},
