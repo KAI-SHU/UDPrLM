@@ -198,7 +198,7 @@ The option -c controls where to load predefined configs, you can either specify 
 To evaluate:
 
 ```sh
-python -u -m supar.cmds.biaffine_dep evaluate -d 0 -p biaffine-dep-lang --data data/lang-test.conllx --tree --proj --punct  \
+$ python -u -m supar.cmds.biaffine_dep evaluate -d 0 -p biaffine-dep-lang --data data/lang-test.conllx --tree --proj --punct  \
 ```
 --tree and --proj ensures to output well-formed and projective trees respectively.
 
