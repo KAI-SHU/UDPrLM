@@ -234,4 +234,13 @@ Specifying --mbr to perform MBR decoding often leads to consistent improvement.
 ## Citation
 
 ```sh
+@inproceedings{
+sun2021multilingual,
+title={Multilingual Pre-training with Universal Dependency Learning},
+author={Kailai Sun and Zuchao Li and hai zhao},
+booktitle={Advances in Neural Information Processing Systems},
+editor={A. Beygelzimer and Y. Dauphin and P. Liang and J. Wortman Vaughan},
+year={2021},
+url={https://openreview.net/forum?id=5JIAKpVrmZK}
+}
 ```
